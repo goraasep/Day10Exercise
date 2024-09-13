@@ -39,11 +39,4 @@ public class Libraries {
         dvdMap.put(dvd.getId().toString(), dvd);
         return dvdMap;
     }
-
-//    public static HashMap<String, LibraryItem> getLibraryItems() {
-//        HashMap<String, LibraryItem> libraryItemHashMap = new HashMap<>();
-//        LibraryItem libraryItem = new LibraryItem("The Lord of the Rings", "Amazon MGM Studios",2);
-//        libraryItemHashMap.put(libraryItem.getId().toString(), libraryItem);
-//        return libraryItemHashMap;
-//    }
 }

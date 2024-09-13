@@ -87,7 +87,7 @@ public class MainMenu {
             System.out.println("Username or password is wrong.");
         } else {
             System.out.println("Login succesful.");
-            SubMenu subMenu = new SubMenu(currentUser, scanIn, comicHashMap, magazineHashMap, dvdHashMap);
+            SubMenu subMenu = new SubMenu(currentUser, scanIn, this.comicHashMap, this.magazineHashMap, this.dvdHashMap);
             subMenu.run();
         }
     }
