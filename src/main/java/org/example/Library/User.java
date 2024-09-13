@@ -6,6 +6,7 @@ public class User {
     private UUID id;
     private String userName;
     private String password;
+    private boolean isSuperUser = false;
     private HashMap<String, Comic> comicHashMap = new HashMap<>();
     private HashMap<String, Magazine> magazineHashMap = new HashMap<>();
     private HashMap<String, DVD> dvdHashMap = new HashMap<>();
@@ -14,6 +15,13 @@ public class User {
         this.id = UUID.randomUUID();
         this.userName = userName;
         this.password = password;
+    }
+
+    User(String userName, String password,boolean isSuperUser) {
+        this.id = UUID.randomUUID();
+        this.userName = userName;
+        this.password = password;
+        this.isSuperUser = isSuperUser;
     }
 
     public String getUserName() {
@@ -26,6 +34,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public boolean checkSuperUser(){
+        return this.isSuperUser;
     }
 
     public Boolean authentication(String password) {

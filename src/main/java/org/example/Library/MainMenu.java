@@ -13,6 +13,7 @@ public class MainMenu {
 
     public void run() {
         this.userList.add(new User("gora", "asep")); //for debug purpose, will delete later
+        this.userList.add(new User("admin", "admin", true));
         System.out.println("======= \t \tLIBRARY \t\t=======");
         System.out.println("1. Register");
         System.out.println("2. Login");
@@ -87,8 +88,15 @@ public class MainMenu {
             System.out.println("Username or password is wrong.");
         } else {
             System.out.println("Login succesful.");
-            SubMenu subMenu = new SubMenu(currentUser, scanIn, this.comicHashMap, this.magazineHashMap, this.dvdHashMap);
-            subMenu.run();
+            if (!currentUser.checkSuperUser()){
+                SubMenu subMenu = new SubMenu(currentUser, scanIn, this.comicHashMap, this.magazineHashMap, this.dvdHashMap);
+                subMenu.run();
+            }else{
+                System.out.println("Logged in as Super User.");
+                AdminMenu adminMenu = new AdminMenu(this.userList, scanIn, this.comicHashMap, this.magazineHashMap, this.dvdHashMap);
+                adminMenu.run();
+            }
+
         }
     }
 }

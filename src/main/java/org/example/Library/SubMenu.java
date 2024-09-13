@@ -101,7 +101,7 @@ public class SubMenu {
 
     private void printBorrowedItems() {
         if (this.user.getComicHashMap().isEmpty() && this.user.getMagazineHashMap().isEmpty() && this.user.getDVDHashMap().isEmpty()) {
-            System.out.println("Your don't have any borrowed items.");
+            System.out.println("You don't have any borrowed items.");
         } else {
             System.out.println("======= \t \tBORROWED ITEMS \t\t=======");
         }
@@ -166,7 +166,7 @@ public class SubMenu {
             }
         } catch (Exception e) {
             System.out.println("Borrowing item failed.");
-            System.out.println("Error : " + e.getMessage());
+            System.out.println("Reason : " + e.getMessage());
         }
     }
 
@@ -192,7 +192,7 @@ public class SubMenu {
                 throw new RuntimeException("Item not found");
             }
         } catch (Exception e) {
-            System.out.println("Returning comic failed.");
+            System.out.println("Returning item failed.");
             System.out.println("Reason : " + e.getMessage());
         }
     }

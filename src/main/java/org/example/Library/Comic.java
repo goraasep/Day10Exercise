@@ -4,10 +4,10 @@ public class Comic extends Book {
     private String genre;
     private int volume;
 
-    Comic(String itemName, String publisher, int pages, String genre, int episode, int stock) {
+    Comic(String itemName, String publisher, int pages, String genre, int volume, int stock) {
         super(itemName, publisher, pages, stock);
         this.genre = genre;
-        this.volume = episode;
+        this.volume = volume;
     }
 
     public String getGenre() {
